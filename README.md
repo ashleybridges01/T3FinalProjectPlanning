@@ -1,9 +1,51 @@
-### R1 Description of website
+### R1 Description of MoneyTree
 
-- Purpose
-- Functionality / features
-- Target audience
-- Tech stack
+#### Purpose
+
+The main concept of MoneyTree is for each user to be able to create a Trello style board in a matrix format. However, rather than having "to do" notes on the board tiles, they will have dollar values (and potentially dates) to reflect expected income and costs. 
+
+The information collected and displayed on the tiles will be consolidated and presented to the user on an automatically customised dashboard to provide a usable decision making tool. The customisation will be driven by the way the tiles are organized on the screen: 
+
+The first way the data is grouped will be represented vertically, as a traffic light system:
+
+- Red colour tiles for items that absolutely must be paid
+- Amber colour tiles for items that should be paid but are not critical
+- Green colour tiles for items that might be considered a luxury, or are not time critical. 
+
+In addition, the user can create as many columns as desired to group income or expenses by type (e.g. household costs or motoring costs, or costs paid by different partners in a relationship).
+
+
+#### Functionality / features
+
+Once logged in, a user will be able to create their own private, customised board. They first create the columns, and then the tiles underneath each column heading. 
+
+The functionality which will transform the app from a regular calculator in to a usable tool is the ability to drag and drop tiles between columns and between traffic light categories. The real time update to the summary dashboard will make scenario modelling easy.
+
+
+#### Target audience
+
+Four target user types have been identified in the user stories under R4. For completeness, these user types are:
+
+- A single mother
+- A newly employed school graduate
+- A "typical" family with two incomes and two children
+- A small business owner
+
+The main characteristic they have in common is having a need to make smart choices when it comes to spending their money (both what, and when). 
+
+They have either a limited time or inclination to use traditional pen and paper planning methods (which are slow), or more sophisticated online tools (which take a long time to learn and set up). 
+
+#### Tech stack
+
+The back end of MoneyTree will be built using Ruby on Rails, set up in API mode. This will be integrated with a Postgresql database and hosted on Heroku. Two Ruby gems will be incorporated to permit secure user logon: knock (to generate the Javascript Web Token for user authentication), and bcrypt (to provide the password hashing algorithm).   
+
+The site will be free, so no payment gems (e.g. Stripe) are needed.
+
+The front end will utilise React.js, and be hosted on Netifly. It will communicate with the Rails API using the Axios http client. The useState, useEffect, and useContext hooks will be utilized where appropriate.
+
+The "react-draggable" addon component will be used to enable drag and drop functionality.
+
+Testing will be performed using cypress.js.
 
 <hr>
 
@@ -35,8 +77,6 @@ High level overview of App components:
 <hr>
 
 ### R4 User Stories
-
-The initial idea was to create a Trello-style board in a matrix format with components that include dollar values for budgeting purposes, which feed in to a dashboard.
 
 #### User Expectations
 
@@ -84,6 +124,9 @@ Four distinct target user types were considered:
 
 Day 1 AM:
 <img src="Resources/PM screenshots/1 Mon 13 Jul 2020 09∶58∶16 .png">
+
+Day 2 AM:
+<img src="Resources/PM screenshots/">
 
 Day 2 PM:
 <img src="Resources/PM screenshots/">
