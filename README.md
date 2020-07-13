@@ -15,6 +15,8 @@ User login and password.
 Any API's.
 ERD:
 
+<img src="Resources/DataDiagram.png">
+
 <img src="Resources/ERD.png">
 
 
@@ -23,10 +25,10 @@ ERD:
 ### R3 Application Architecture Diagram
 
 High level overview of App components:
-- Rails backend
+- Rails backend, hosted on Heroku
 - Postgresql
-- Ruby Gems
-- React front end
+- Ruby Gems - bcrypt, knock
+- React front end, deployed on Netlify
 - React-Draggable 
 
 
@@ -46,6 +48,7 @@ All users will expect the following features or functionality:
 - To be able to customise the board layout, especially with regard to the column headings.
 - Potentially to be able to create a board from a pre-planned template.
 - To be able to re-purpose the app for different needs (e.g. cash flow planning, budgeting).
+- For their data to be stored so they can retrieve it at a later date.
 
 #### User Characterisitics
 
