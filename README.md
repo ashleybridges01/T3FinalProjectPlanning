@@ -51,16 +51,23 @@ Testing will be performed using cypress.js.
 
 ### R2 Dataflow Diagram
 
-Where is the data from, where does it go? What happens to it?
-Board components.
-User login and password.
-Any API's.
-ERD:
-
 <img src="Resources/DataDiagram.png">
+
+All data is initially input by the user in their browser. Upon hitting submit, the information is passed via the front end Netifly server to the Rails API.
+
+When creating an account, their plain text password will be converted in to a secure hash by Bcrypt, before being stored in the postgres database. At the same time a JSON Web Token will be returned to the user browser via the API, logging the user in.
+
+All future requests (whether view a page, or to create/edit/delete data) will require this JWT received back from the API to authenticate them. 
+
+All data will flow over and back over the same basic route (browser/front end/back end/database). As the user creates and edits board components in their browser, they are updating the values of the data held on the database - outlined below: 
 
 <img src="Resources/ERD.png">
 
+The database structure required for the app to function is very simple as not much information is being held.
+
+- The User entity exists to be able to create a user login profile which will be tied to their personalised and secure data.
+- A Column entity exists to create the vertical column categories displayed on the webpage. These in turn hold the main board tiles (which at times may be empty placeholders). A user can have many columns but every column can only have one user.
+- The board items, or tiles within the column entity only need basic  information to be able to perform useful analysis: a description, the dollar amount, whether it is an income or expense, the traffic light priority. A column can have zero or many tiles, and each tile belongs to only one column. 
 
 <hr>
 
@@ -73,6 +80,7 @@ High level overview of App components:
 - React front end, deployed on Netlify
 - React-Draggable 
 
+<img src="Resources/AADiagram.png">
 
 <hr>
 
