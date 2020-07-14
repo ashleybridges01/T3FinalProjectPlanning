@@ -67,18 +67,11 @@ The database structure required for the app to function is very simple as not mu
 
 - The User entity exists to be able to create a user login profile which will be tied to their personalised and secure data.
 - A Column entity exists to create the vertical column categories displayed on the webpage. These in turn hold the main board tiles (which at times may be empty placeholders). A user can have many columns but every column can only have one user.
-- The board items, or tiles within the column entity only need basic  information to be able to perform useful analysis: a description, the dollar amount, whether it is an income or expense, the traffic light priority. A column can have zero or many tiles, and each tile belongs to only one column. 
+- The board tiles within the column entity only need basic  information to be able to perform useful analysis: a description, the dollar amount, date due, whether it is an income or expense, and the traffic light priority. A column can have zero or many tiles, and each tile belongs to only one column. 
 
 <hr>
 
 ### R3 Application Architecture Diagram
-
-High level overview of App components:
-- Rails backend, hosted on Heroku
-- Postgresql
-- Ruby Gems - bcrypt, knock
-- React front end, deployed on Netlify
-- React-Draggable 
 
 <img src="Resources/AADiagram.png">
 
@@ -134,10 +127,10 @@ Day 1 AM:
 <img src="Resources/PM screenshots/1 Mon 13 Jul 2020 09∶58∶16 .png">
 
 Day 2 AM:
-<img src="Resources/PM screenshots/">
+<img src="Resources/PM screenshots/2 Tues 14 July 10:16:46.png">
 
 Day 2 PM:
-<img src="Resources/PM screenshots/">
+<img src="Resources/PM screenshots/3 Tues 14 July 15:41:21.png">
 
 Day 3 AM:
 <img src="Resources/PM screenshots/">
