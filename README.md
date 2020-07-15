@@ -43,7 +43,7 @@ The site will be free, so no payment gems (e.g. Stripe) are needed.
 
 The front end will utilise React.js, and be hosted on Netifly. It will communicate with the Rails API using the Axios http client. The useState, useEffect, and useContext hooks will be utilized where appropriate.
 
-The "react-draggable" addon component will be used to enable drag and drop functionality.
+The "react-beautiful-dnd" addon component will be used to enable drag and drop functionality.
 
 Testing will be performed using cypress.js.
 
@@ -133,10 +133,7 @@ Day 2 PM:
 <img src="Resources/PM screenshots/3 Tues 14 July 15:41:21.png">
 
 Day 3 AM:
-<img src="Resources/PM screenshots/">
-
-Day 3 PM:
-<img src="Resources/PM screenshots/">
+<img src="Resources/PM screenshots/4 Wednesday 15 July 10:34:08.png">
 
 Day 4 AM:
 <img src="Resources/PM screenshots/">
