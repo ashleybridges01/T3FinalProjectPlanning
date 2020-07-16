@@ -115,8 +115,15 @@ Four distinct target user types were considered:
 
 <hr>
 
-
 ### R5 Wireframes for multiple standard screen sizes, created using industry standard software	
+
+Detailed wireframes have been prepared and saved in pdf format in the resources file:
+
+<a href="Resources/moneytree_wireframes.pdf">Wireframes pdf link</a>
+
+These wireframes have also been used to illustrate the user flow around the mobile version of the site as shown below:
+
+<img src="Resources/User_flow.png">
 
 <hr>
 
@@ -136,13 +143,7 @@ Day 3 AM:
 <img src="Resources/PM screenshots/4 Wednesday 15 July 10:34:08.png">
 
 Day 4 AM:
-<img src="Resources/PM screenshots/">
+<img src="Resources/PM screenshots/5 Thursday 16 July 10:08:42.png">
 
 Day 4 PM:
-<img src="Resources/PM screenshots/">
-
-Day 5 AM:
-<img src="Resources/PM screenshots/">
-
-Day 5 PM:
-<img src="Resources/PM screenshots/">
+Assessment submitted
