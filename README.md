@@ -43,7 +43,7 @@ The site will be free, so no payment gems (e.g. Stripe) are needed.
 
 The front end will utilise React.js, and be hosted on Netifly. It will communicate with the Rails API using the Axios http client. The useState, useEffect, and useContext hooks will be utilized where appropriate.
 
-The "react-draggable" addon component will be used to enable drag and drop functionality.
+The "react-beautiful-dnd" addon component will be used to enable drag and drop functionality.
 
 Testing will be performed using cypress.js.
 
@@ -51,28 +51,29 @@ Testing will be performed using cypress.js.
 
 ### R2 Dataflow Diagram
 
-Where is the data from, where does it go? What happens to it?
-Board components.
-User login and password.
-Any API's.
-ERD:
-
 <img src="Resources/DataDiagram.png">
+
+All data is initially input by the user in their browser. Upon hitting submit, the information is passed via the front end Netifly server to the Rails API.
+
+When creating an account, their plain text password will be converted in to a secure hash by Bcrypt, before being stored in the postgres database. At the same time a JSON Web Token will be returned to the user browser via the API, logging the user in.
+
+All future requests (whether view a page, or to create/edit/delete data) will require this JWT received back from the API to authenticate them. 
+
+All data will flow over and back over the same basic route (browser/front end/back end/database). As the user creates and edits board components in their browser, they are updating the values of the data held on the database - outlined below: 
 
 <img src="Resources/ERD.png">
 
+The database structure required for the app to function is very simple as not much information is being held.
+
+- The User entity exists to be able to create a user login profile which will be tied to their personalised and secure data.
+- A Column entity exists to create the vertical column categories displayed on the webpage. These in turn hold the main board tiles (which at times may be empty placeholders). A user can have many columns but every column can only have one user.
+- The board tiles within the column entity only need basic  information to be able to perform useful analysis: a description, the dollar amount, date due, whether it is an income or expense, and the traffic light priority. A column can have zero or many tiles, and each tile belongs to only one column. 
 
 <hr>
 
 ### R3 Application Architecture Diagram
 
-High level overview of App components:
-- Rails backend, hosted on Heroku
-- Postgresql
-- Ruby Gems - bcrypt, knock
-- React front end, deployed on Netlify
-- React-Draggable 
-
+<img src="Resources/AADiagram.png">
 
 <hr>
 
@@ -114,8 +115,15 @@ Four distinct target user types were considered:
 
 <hr>
 
-
 ### R5 Wireframes for multiple standard screen sizes, created using industry standard software	
+
+Detailed wireframes have been prepared and saved in pdf format in the resources file:
+
+<a href="Resources/moneytree_wireframes.pdf">Wireframes pdf link</a>
+
+These wireframes have also been used to illustrate the user flow around the mobile version of the site as shown below:
+
+<img src="Resources/User_flow.png">
 
 <hr>
 
@@ -126,25 +134,16 @@ Day 1 AM:
 <img src="Resources/PM screenshots/1 Mon 13 Jul 2020 09∶58∶16 .png">
 
 Day 2 AM:
-<img src="Resources/PM screenshots/">
+<img src="Resources/PM screenshots/2 Tues 14 July 10:16:46.png">
 
 Day 2 PM:
-<img src="Resources/PM screenshots/">
+<img src="Resources/PM screenshots/3 Tues 14 July 15:41:21.png">
 
 Day 3 AM:
-<img src="Resources/PM screenshots/">
-
-Day 3 PM:
-<img src="Resources/PM screenshots/">
+<img src="Resources/PM screenshots/4 Wednesday 15 July 10:34:08.png">
 
 Day 4 AM:
-<img src="Resources/PM screenshots/">
+<img src="Resources/PM screenshots/5 Thursday 16 July 10:08:42.png">
 
 Day 4 PM:
-<img src="Resources/PM screenshots/">
-
-Day 5 AM:
-<img src="Resources/PM screenshots/">
-
-Day 5 PM:
-<img src="Resources/PM screenshots/">
+Assessment submitted
